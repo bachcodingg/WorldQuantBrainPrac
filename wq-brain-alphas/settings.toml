@@ -1,0 +1,21 @@
+# Default simulation settings. Same names as the BRAIN simulation settings panel.
+[simulation]
+instrumentType = "EQUITY"
+region = "USA"
+universe = "TOP3000"
+delay = 1
+decay = 4
+neutralization = "SUBINDUSTRY"   # NONE, MARKET, SECTOR, INDUSTRY, SUBINDUSTRY
+truncation = 0.08
+pasteurization = "ON"
+unitHandling = "VERIFY"
+nanHandling = "OFF"
+language = "FASTEXPR"
+visualization = false
+
+# Thresholds used by `report`. Check the platform's own check list for the real limits.
+[filter]
+min_sharpe = 1.25
+min_fitness = 1.0
+max_turnover = 0.70
+min_turnover = 0.01

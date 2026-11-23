@@ -1,0 +1,5 @@
+# Templates for `run.py sweep`. {field} is filled from a fields file, {window} from --windows.
+-rank({field} / cap)
+rank(ts_rank({field}, {window}))
+-ts_delta(rank({field}), {window})
+group_rank(ts_zscore({field}, {window}), industry)

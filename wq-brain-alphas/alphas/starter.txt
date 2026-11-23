@@ -1,0 +1,17 @@
+# Starter ideas. One expression per line. Lines starting with # are ignored.
+
+# Price/volume: short-term mean reversion (high turnover, needs decay)
+-ts_delta(close, 5)
+-rank(ts_delta(close, 5))
+
+# Price vs VWAP reversion, smoothed to cut turnover
+rank(ts_mean(vwap / close, 5))
+
+# Volume-confirmed reversal
+-rank(ts_delta(close, 3)) * rank(volume / ts_mean(volume, 20))
+
+# Fundamentals: slow signals, low turnover
+-rank(ebit / capex)
+-ts_rank(retained_earnings, 500)
+rank(operating_income / assets)
+group_rank(sales / assets, industry)
